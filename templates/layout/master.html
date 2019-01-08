@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+
+        {% include 'layout/partials/head.html'%}
+
+    </head>
+
+    <body class="rtl pt-home nt-">
+
+            {% include 'layout/partials/header.html'%}
+
+            <main>
+                <div class="container" style="margin-top: 3%">
+                            {% block content %}{% endblock %}
+                </div>
+            </main>
+
+
+
+            {% include 'layout/partials/footer.html'%}
+
+            {% include 'layout/partials/scripts.html'%}
+
+    </body>
+</html>
