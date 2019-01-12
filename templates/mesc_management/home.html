@@ -1,0 +1,51 @@
+{% extends 'layout/master.html'%}
+
+{% block title %} صحفه ها {% endblock %}
+
+{% block content %}
+
+<div class="row">
+
+      <div class="panel">
+          <div class="panel-body">
+
+    {% for page in pages %}
+
+       <a href="/mesc/page/{{page.id}}">
+            <div class="news news-home" >
+                <h4 >{{page.title|slice:'80'}}</h4>
+                <p>{{page.content|slice:'130'}}</p>
+            </div>
+        </a>
+
+    {% endfor%}
+
+  {% if pages.has_other_pages %}
+  <ul class="pagination">
+    {% if pages.has_previous %}
+      <li><a href="?page={{ pages.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in pages.paginator.page_range %}
+      {% if pages.number == i %}
+        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li><a href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if pages.has_next %}
+      <li><a href="?page={{ pages.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+
+
+    </div>
+
+</div>
+</div>
+
+{% endblock %}

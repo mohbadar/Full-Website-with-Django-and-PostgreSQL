@@ -1,0 +1,17 @@
+{% extends 'layout/master.html'%}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<article>
+
+        <h3>{{news.title}}</h3>
+       ]<p>منبع | سرچینه: {{news.source.name}}</p>
+        <div>
+                {{news.content|safe}}
+        </div>
+
+</article>
+
+{% endblock %}

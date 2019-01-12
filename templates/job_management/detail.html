@@ -1,0 +1,32 @@
+{% extends 'layout/master.html'%}
+
+{% block title %}
+
+    {{job.title}}
+
+{% endblock %}
+
+{% block content %}
+
+<article>
+
+        <h3>{{job.title}}</h3>
+        <div class="row">
+            <p> نام سازمان | سازمان نوم : <b><a href="/job/entity/{{job.entity.id}}">{{job.entity.name}}</a> </b></p>
+            <p>{{job.entity.description|slice:'300'}}</p>
+
+        </div>
+    <hr/>
+        <div>
+                {{job.description|safe}}
+        </div>
+        <div>
+            <a href="/media/{{job.pdf}}" class="fa fa-job fa-2x"></a>
+        </div>
+
+        <p>تاریخ نشر | د نشر تاریخ : {{job.publish_date}}</p>
+        <p> تاریخ ختم | د ختم تاریخ : {{job.expire_date}}</p>
+
+</article>
+
+{% endblock %}

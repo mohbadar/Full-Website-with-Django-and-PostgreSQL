@@ -34,6 +34,7 @@ class Entity(models.Model):
 class Job(models.Model):
     title = models.TextField(max_length=512, verbose_name=("Job Title"))
     entity = models.ForeignKey(Entity, related_name="job_entity", verbose_name=("Entity"), on_delete="cascade")
+    category = models.ForeignKey(JobCategory, related_name="job_category", verbose_name=("Category"), on_delete=models.CASCADE)
     description = RichTextUploadingField()
     created_at = models.DateTimeField(default=timezone.now, editable=False)
     publish_date = models.DateTimeField(verbose_name=("Publish Date"))

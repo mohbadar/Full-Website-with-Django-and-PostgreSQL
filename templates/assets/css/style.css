@@ -14,13 +14,34 @@
  box-sizing:border-box
 }
 html {
- font-family:sans-serif;
+ font-family:'NassimArabic-Regular-Regular',sans-serif;
  line-height:1.15;
  -webkit-text-size-adjust:100%;
  -ms-text-size-adjust:100%;
  -ms-overflow-style:scrollbar;
  -webkit-tap-highlight-color:rgba(0, 0, 0, 0)
 }
+
+
+.panel-body .news{
+	border-bottom: 1px solid #ddd;
+	padding: 10px 20px;
+}
+.panel-body .news p{
+	color: #777;
+}
+
+.news:hover{
+	border: 1px solid #ddd;
+	text-decoration:none
+}
+.panel-body a:hover .news{
+	background-color: #eee;
+	color: #a51c30;
+	text-decoration:none;
+}
+
+
 @-ms-viewport {
  width:device-width
 }
@@ -29,13 +50,13 @@ article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section {
 }
 body {
  margin:0;
- font-family:"Vazir";
+ font-family:"NassimArabic-Regular-Regular";
  font-size:0.8rem;
  font-weight:normal;
  line-height:1.5;
  color:#212529;
  text-align:left;
- background-color:#fff
+ background-color:#f9f9f9;
 }
 [tabindex="-1"]:focus {
  outline:0!important
@@ -3345,7 +3366,7 @@ body.compensate-for-scrollbar {
 .fancybox-container {
  -webkit-backface-visibility:hidden;
  backface-visibility:hidden;
- font-family:"Vazir";
+ font-family:"NassimArabic-Regular";
  height:100%;
  left:0;
  position:fixed;
@@ -4769,7 +4790,7 @@ article.item .item-header .item-title {
  margin:10px 0
 }
 article.item .item-header .item-title h4 {
- font-family:"Vazir";
+ font-family:"NassimArabic-Regular";
  font-size:0.8rem;
  margin-bottom:0
 }
@@ -4850,7 +4871,7 @@ article.item .item-summary figure._play:after {
  direction:ltr;
  text-align:center;
  line-height:100px;
- font-family:"nastooh-icons";
+ font-family:"NassimArabic-Regular-Regular";
  font-size:2.5rem;
  text-indent:3px;
  opacity:0.8;
@@ -4866,7 +4887,7 @@ article.item .item-summary .introtext {
  margin-bottom:0;
  text-align:justify;
  color:#000;
- font-family:"Vazir";
+ font-family:"NassimArabic-Regular-Regular";
  font-size:0.8rem;
  background:transparent;
  padding:20px;
@@ -5285,7 +5306,7 @@ body.ltr #photo .item-date {
 }
 #photo .item-body p,#photo .summary {
  margin-bottom:20px;
- font-family:"Vazir";
+ font-family:"NassimArabic-Regular-Regular";
  font-size:0.8rem;
  line-height:1.6;
  padding:20px 0 0;
@@ -5349,7 +5370,7 @@ body.ltr #photo .short-link-container {
 article.item {
 }
 article.item .item-header .item-title h5,article.item .item-header .item-title h6 {
- font-family:"Vazir";
+ font-family:"NassimArabic-Regular-Regular";
  font-size:0.8rem;
  font-weight:bold
 }
@@ -5660,32 +5681,11 @@ a {
  height:60px;
  background:#adb5bd
 }
+
+
 @font-face {
- font-family:'Vazir';
- src:url("../../global/font/vazir-v16.0.1/Vazir.eot?95570995");
- src:url("../../global/font/vazir-v16.0.1/Vazir.eot?95570995#iefix") format("embedded-opentype"), url("../../global/font/vazir-v16.0.1/Vazir.woff2?95570995") format("woff2"), url("../../global/font/vazir-v16.0.1/Vazir.woff?95570995") format("woff"), url("../../global/font/vazir-v16.0.1/Vazir.ttf?95570995") format("truetype"), url("../../global/font/vazir-v16.0.1/Vazir.svg?95570995#icons") format("svg");
- font-weight:normal;
- font-style:normal
-}
-@font-face {
- font-family:'Vazir';
- src:url("../../global/font/vazir-v16.0.1/Vazir-Medium.eot?95570995");
- src:url("../../global/font/vazir-v16.0.1/Vazir-Medium.eot?95570995#iefix") format("embedded-opentype"), url("../../global/font/vazir-v16.0.1/Vazir-Medium.woff2?95570995") format("woff2"), url("../../global/font/vazir-v16.0.1/Vazir-Medium.woff?95570995") format("woff"), url("../../global/font/vazir-v16.0.1/Vazir-Medium.ttf?95570995") format("truetype"), url("../../global/font/vazir-v16.0.1/Vazir-Medium.svg?95570995#icons") format("svg");
- font-weight:500;
- font-style:normal
-}
-@font-face {
- font-family:'Vazir';
- src:url("../fonts/vazir-v16.0.1/Vazir-Bold.eot");
- src:url("../fonts/vazir-v16.0.1/Vazir-Bold.eot") format("embedded-opentype"), url("../fonts/vazir-v16.0.1/Vazir-Bold.woff2?95570995") format("woff2"), url("../../global/font/vazir-v16.0.1/Vazir-Bold.woff?95570995") format("woff"), url("../fonts/vazir-v16.0.1/Vazir-Bold.ttf") format("truetype"), url("../fonts/vazir-v16.0.1/Vazir-Bold.svg") format("svg");
- font-weight:bold;
- font-style:normal
-}
-@font-face {
- font-family:"RTNassim";
- src:url("../fonts/rosettatype-nassim-regular.eot") format("eot"), url("../fonts/rosettatype-nassim-regular.woff") format("woff"), url("../fonts/rosettatype-nassim-regular.ttf") format("truetype");
- font-weight:normal;
- font-style:normal
+ font-family:"NassimArabic-Regular-Regular";
+ src:url("../fonts/NassimArabic-RegularLatn-Rg_v2.6.woff") format("woff");
 }
 @font-face {
  font-family:"RTNassim";
@@ -6087,7 +6087,7 @@ a {
  }
 }
 body.dark #header {
- background:url("../img/header-bg.png") no-repeat center bottom #404040
+ background:url("../images/header-bg.png") no-repeat center bottom #404040
 }
 #header a {
  color:#fff;
@@ -7121,7 +7121,7 @@ html[lang=ku] .box>div ul li .desc h3,html[lang=ur] .box>div ul li .desc h3 {
  font-family:"Times New Roman", Arial, Times
 }
 .box>div ul li .desc h4 {
- font:normal 0.8rem/1.4 "Vazir"
+ font:normal 0.8rem/1.4 "NassimArabic-Regular"
 }
 body.ltr .box>div ul li .desc h4 {
  font-family:"Arial"
@@ -7184,7 +7184,7 @@ body.ltr .box>div ul li .desc time a:before {
  background:#595782;
  color:#fff;
  margin-right:4px;
- font:normal 0.6rem/1 "Vazir";
+ font:normal 0.6rem/1 "NassimArabic-Regular";
  padding:4px 6px;
  border-radius:3px
 }
@@ -7859,7 +7859,7 @@ body.ltr .box.list.list-bullets>div ul li {
 }
 .box.list.list-bullets>div ul li .desc h3 {
  display:inline;
- font:500 0.8rem/1.5 "Vazir"
+ font:500 0.8rem/1.5 "NassimArabic-Regular"
 }
 body.ltr .box.list.list-bullets>div ul li .desc h3 {
  font-family:"Arial"
@@ -8340,7 +8340,7 @@ body.ltr .box.cols.cols-3>div ul li h3 {
 }
 .box.cols.cols-6>div ul li h3 {
  font-size:14px;
- font-family:"Vazir"
+ font-family:"NassimArabic-Regular"
 }
 body.ltr .box.cols.cols-6>div ul li h3 {
  font-family:"Arial"
@@ -9262,7 +9262,7 @@ body.ltr .search {
  background:#444367;
  border:0 none;
  padding:0 10px;
- font-family:"Vazir";
+ font-family:"NassimArabic-Regular";
  border:0 none;
  appearance:textfield;
  border-radius:3px;
@@ -9432,7 +9432,7 @@ body.ltr .box.top.top-cols ul li .desc {
  color:#fff
 }
 .box.contributors>div ul li .desc h5 {
- font:normal 0.75rem/1 "Vazir"
+ font:normal 0.75rem/1 "NassimArabic-Regular"
 }
 .box.contributors>div ul li .desc h5 a {
  color:#ee0000
@@ -9468,11 +9468,11 @@ html[lang=ku] .box.contributors>div ul li .desc h5,html[lang=ur] .box.contributo
 }
 .box.contributor>header span.service {
  font-size:70%;
- font-family:"Vazir"
+ font-family:"NassimArabic-Regular"
 }
 .box.contributor>header span.stats {
  font-size:12px;
- font-family:"Vazir";
+ font-family:'NassimArabic-Regular';
  font-weight:normal
 }
 .box.contributor>header span.stats i {

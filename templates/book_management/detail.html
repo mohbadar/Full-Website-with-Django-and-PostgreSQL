@@ -1,0 +1,24 @@
+{% extends 'layout/master.html'%}
+
+{% block title %}
+
+    {{book.title}}
+
+{% endblock %}
+
+{% block content %}
+
+<article>
+
+        <h3>{{book.title}}</h3>
+        <p>مولف:<a href="/book/author/{{book.author.id}}">{{book.author.firstname}} {{book.author.lastname}}</a> </p>
+        <div>
+                {{book.description|safe}}
+        </div>
+        <div>
+            <a href="/media/{{book.pdf}}" class="fa fa-book fa-2x"></a>
+        </div>
+
+</article>
+
+{% endblock %}

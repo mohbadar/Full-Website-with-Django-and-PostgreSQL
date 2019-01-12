@@ -1,6 +1,6 @@
 {% load static from staticfiles %}
 
-        <title>Afghan {% block title%}{% endblock %}</title>
+        <title>Afghan {% block title %}{% endblock %}</title>
         <meta name="description" content="Demo text"/>
         <meta name="keywords" content="Demo Text"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,14 +24,347 @@
         <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" />
         <link href="{% static 'css/custom.css' %}" type="text/css" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-            <script
+        <script
                 src="https://code.jquery.com/jquery-3.3.1.min.js"
                 integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
-
+         <script src="{% static 'js/jquery.js' %}"></script>
 
             <!-- Popper JS -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 
             <!-- Latest compiled JavaScript -->
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+
+    @font-face {
+            font-family: NassimArabic-Regular;
+            src: url({% static 'fonts/NassimArabicLatn-Rg_v2.6.woff'%}) format("woff");
+            font-weight: normal;
+            font-style: normal
+    }
+    *{
+                font-family:"NassimArabic-Regular",Georgia,Times,"Times New Roman",serif !important;
+                font-weight: normal;
+                font-size:16px;
+    }
+
+</style>
+
+<script type="text/javascript">
+
+        $(document).ready(function(){
+
+            function displayData() {
+                getData();
+                //getTypingStatus();
+                setTimeout(displayData, 3000);
+            }
+
+            function getData()
+            {
+                   //get news categories
+                             $.ajax({
+                                    url:  '{% url 'get_news_categories' %}',
+                                    type:  'get',
+                                    dataType:  'json',
+                                    success: function  (data){
+                                         $('#news_category').empty();
+                                        var rows =  '';
+
+                                        data.news_categories.forEach(item => {
+                                              rows += `<li><a href="/news/category/${item.id}">${item.name}</a></li>`
+                                        })
+                                        $('#news_category').append(rows);
+                                    }
+
+                                 });
+
+                               //get articles categories
+                             $.ajax({
+                                    url:  '{% url 'get_article_categories' %}',
+                                    type:  'get',
+                                    dataType:  'json',
+                                    success: function  (data){
+                                         $('#article_category').empty();
+                                        var rows =  '';
+
+                                        data.article_categories.forEach(item => {
+                                              rows += `<li><a href="/article/category/${item.id}">${item.name}</a></li>`
+                                        })
+                                        $('#article_category').append(rows);
+                                    }
+
+                                 });
+
+                             //get book categories
+                             $.ajax({
+                                    url:  '{% url 'get_book_categories' %}',
+                                    type:  'get',
+                                    dataType:  'json',
+                                    success: function  (data){
+                                         $('#book_category').empty();
+                                        var rows =  '';
+
+                                        data.book_categories.forEach(item => {
+                                              rows += `<li><a href="/book/category/${item.id}">${item.name}</a></li>`
+                                        })
+                                        $('#book_category').append(rows);
+                                    }
+
+                                 });
+
+
+                           //get event categories
+                             $.ajax({
+                                    url:  '{% url 'get_event_categories' %}',
+                                    type:  'get',
+                                    dataType:  'json',
+                                    success: function  (data){
+                                         $('#event_category').empty();
+                                        var rows =  '';
+
+                                        data.event_categories.forEach(item => {
+                                              rows += `<li><a href="/event/category/${item.id}">${item.name}</a></li>`
+                                        })
+                                        $('#event_category').append(rows);
+                                    }
+
+                                 });
+
+                           //get top pages
+                             $.ajax({
+                                    url:  '{% url 'get_top_pages' %}',
+                                    type:  'get',
+                                    dataType:  'json',
+                                    success: function  (data){
+                                        $('#top_pages').empty();
+                                        var rows =  '';
+
+                                        data.pages.forEach(item => {
+                                              rows += `<li><a href="/mesc/page/${item.id}">${item.title}</a></li>`
+                                        })
+                                        $('#top_pages').append(rows);
+                                    }
+
+                                 });
+
+                             //get post categories
+                             $.ajax({
+                                    url:  '{% url 'get_post_categories' %}',
+                                    type:  'get',
+                                    dataType:  'json',
+                                    success: function  (data){
+                                        $('#post_category').empty();
+                                        var rows =  '';
+
+                                        data.post_categories.forEach(item => {
+                                              rows += `<li><a href="/post/category/${item.id}">${item.name}</a></li>`
+                                        })
+                                        $('#post_category').append(rows);
+                                    }
+
+                                 });
+
+                                 //get top news
+                                 $.ajax({
+                                    url:  '{% url 'get_top_news' %}',
+                                    type:  'get',
+                                    dataType:  'json',
+                                    success: function  (data){
+                                        $('#top_news').empty();
+                                        var rows =  '';
+                                        data.news.forEach(item => {
+                                              rows += `
+                                                     <li class="news">
+                                                            <div class="desc">
+                                                                <h3><a href="/news/${item.slug}" title="${item.slug}">
+                                                                        ${item.title}
+                                                                     </a>
+                                                                </h3>
+                                                            </div>
+                                                        </li>
+                                                     `
+                                        })
+                                        $('#top_news').append(rows);
+                                    }
+
+                                 });
+
+
+                                 //get top events
+                                 $.ajax({
+                                    url:  '{% url 'get_top_events' %}',
+                                    type:  'get',
+                                    dataType:  'json',
+                                    success: function  (data){
+                                        $('#top_events').empty();
+                                        var rows =  '';
+                                        data.events.forEach(item => {
+                                              rows += `
+                                                     <li class="news">
+                                                            <div class="desc">
+                                                                <h3><a href="/event/${item.slug}" title="${item.slug}">
+                                                                        ${item.title}
+                                                                     </a>
+                                                                </h3>
+                                                            </div>
+                                                        </li>
+                                                     `
+                                        })
+                                        $('#top_events').append(rows);
+                                    }
+
+                                 });
+
+
+                                  //get top events
+                                 $.ajax({
+                                    url:  '{% url 'get_top_books' %}',
+                                    type:  'get',
+                                    dataType:  'json',
+                                    success: function  (data){
+                                        $('#top_books').empty();
+                                        var rows =  '';
+                                        data.books.forEach(item => {
+                                              rows += `
+                                                     <li class="news">
+                                                            <div class="desc">
+                                                                <h3><a href="/book/${item.slug}" title="${item.slug}">
+                                                                        ${item.title}
+                                                                     </a>
+                                                                </h3>
+                                                            </div>
+                                                        </li>
+                                                     `
+                                        })
+                                        $('#top_books').append(rows);
+                                    }
+
+                                 });
+
+                                   //get top events
+                                 $.ajax({
+                                    url:  '{% url 'get_top_articles' %}',
+                                    type:  'get',
+                                    dataType:  'json',
+                                    success: function  (data){
+                                        $('#top_articles').empty();
+                                        var rows =  '';
+                                        data.articles.forEach(item => {
+                                              rows += `
+                                                     <li class="news">
+                                                            <div class="desc">
+                                                                <h3><a href="/article/${item.slug}" title="${item.slug}">
+                                                                        ${item.title}
+                                                                     </a>
+                                                                </h3>
+                                                            </div>
+                                                        </li>
+                                                     `
+                                        })
+                                        $('#top_articles').append(rows);
+                                    }
+
+                                 });
+
+
+                           //get advertisement categories
+                             $.ajax({
+                                    url:  '{% url 'get_advertisement_categories' %}',
+                                    type:  'get',
+                                    dataType:  'json',
+                                    success: function  (data){
+                                         $('#advertisement_categories').empty();
+                                        var rows =  '';
+
+                                        data.advertisement_categories.forEach(item => {
+                                              rows += `<li><a href="/advertisement/${item.id}">${item.name}</a></li>`
+                                        })
+                                        $('#advertisement_categories').append(rows);
+                                    }
+
+                                 });
+
+
+
+                           //get provinces
+                             $.ajax({
+                                    url:  '{% url 'get_provinces' %}',
+                                    type:  'get',
+                                    dataType:  'json',
+                                    success: function  (data){
+                                         $('#provinces').empty();
+                                        var rows =  '';
+
+                                        data.provinces.forEach(item => {
+                                              rows += `<li><a href="/afghanistan/province/${item.id}">${item.name}</a></li>`
+                                        })
+                                        $('#provinces').append(rows);
+                                    }
+
+                                 });
+
+                                 // get opportunities
+
+                                 $.ajax({
+                                    url:  '{% url 'get_opportunity_category' %}',
+                                    type:  'get',
+                                    dataType:  'json',
+                                    success: function  (data){
+                                         $('#opportunities').empty();
+                                        var rows =  '';
+
+                                        data.opportunity_categories.forEach(item => {
+                                              rows += `<li><a href="/opportunity/category/${item.id}">${item.name}</a></li>`
+                                        })
+                                        $('#opportunities').append(rows);
+                                    }
+
+                                 });
+
+
+                                 // get job
+
+                                 $.ajax({
+                                    url:  '{% url 'get_job_categories' %}',
+                                    type:  'get',
+                                    dataType:  'json',
+                                    success: function  (data){
+                                         $('#jobs').empty();
+                                        var rows =  '';
+
+                                        data.job_categories.forEach(item => {
+                                              rows += `<li><a href="/job/category/${item.id}">${item.name}</a></li>`
+                                        })
+                                        $('#jobs').append(rows);
+                                    }
+
+                                 });
+
+
+                                  // get page categories
+                                 $.ajax({
+                                    url:  '{% url 'get_page_categories' %}',
+                                    type:  'get',
+                                    dataType:  'json',
+                                    success: function  (data){
+                                    $('#page_categories').empty();
+                                        var rows =  '';
+
+                                        data.page_categories.forEach(item => {
+                                              rows += `<li><a href="/mesc/page/category/${item.id}">${item.name}</a></li>`
+                                        })
+                                        $('#page_categories').append(rows);
+                                    }
+
+                                 });
+
+            }
+
+            displayData();
+     });
+
+
+</script>

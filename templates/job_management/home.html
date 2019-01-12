@@ -1,0 +1,54 @@
+{% extends 'layout/master.html'%}
+
+{% block title %} وظایف | دنډی {% endblock %}
+
+{% block content %}
+
+<div class="row">
+
+      <div class="panel">
+          <div class="panel-body">
+                 <div class="">
+                    <h3> وظایف | دنډی  </h3>
+                  </div>
+
+    {% for job in jobs %}
+
+       <a href="/job/{{job.id}}">
+            <div class="news news-home" >
+                <h4 >{{job.title|slice:'80'}}</h4>
+                <p>{{job.description|slice:'130'}}</p>
+            </div>
+        </a>
+
+    {% endfor%}
+
+  {% if jobs.has_other_pages %}
+  <ul class="pagination">
+    {% if jobs.has_previous %}
+      <li><a href="?page={{ jobs.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in jobs.paginator.page_range %}
+      {% if jobs.number == i %}
+        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li><a href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if jobs.has_next %}
+      <li><a href="?page={{ jobs.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+
+
+    </div>
+
+</div>
+</div>
+
+{% endblock %}

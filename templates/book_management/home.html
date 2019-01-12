@@ -1,0 +1,54 @@
+{% extends 'layout/master.html'%}
+
+{% block title %} کتابخانه | کتابتون {% endblock %}
+
+{% block content %}
+
+<div class="row">
+
+      <div class="panel">
+          <div class="panel-body">
+                 <div class="">
+                    <h3> کتابخانه | کتابتون  </h3>
+                  </div>
+
+    {% for book in books %}
+
+       <a href="/book/{{book.id}}">
+            <div class="news news-home" >
+                <h4 >{{book.title|slice:'80'}}</h4>
+                <p>{{book.description|slice:'130'}}</p>
+            </div>
+        </a>
+
+    {% endfor%}
+
+  {% if books.has_other_pages %}
+  <ul class="pagination">
+    {% if books.has_previous %}
+      <li><a href="?page={{ books.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in books.paginator.page_range %}
+      {% if books.number == i %}
+        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li><a href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if books.has_next %}
+      <li><a href="?page={{ books.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+
+
+    </div>
+
+</div>
+</div>
+
+{% endblock %}

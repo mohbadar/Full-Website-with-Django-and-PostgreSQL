@@ -6,3 +6,5 @@ from .models import News, NewsCateory, NewsSource
 admin.site.register(NewsCateory)
 admin.site.register(NewsSource)
 admin.site.register(News)
+
+prepopulated_fields = {'slug': ('title') }

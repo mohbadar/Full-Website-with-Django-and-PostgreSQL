@@ -1,0 +1,21 @@
+{% extends 'layout/master.html'%}
+
+{% block title %}
+    {{author.firstname}} {{author.lastname}}
+{% endblock %}
+
+{% block content %}
+
+<article>
+
+        <h3>{{author.firstname}} {{author.lastname}}</h3>
+
+        <div>
+                {{author.biography|safe}}
+        </div>
+
+
+
+</article>
+
+{% endblock %}

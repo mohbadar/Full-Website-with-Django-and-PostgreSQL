@@ -1,0 +1,18 @@
+{% extends 'layout/master.html'%}
+
+{% block title %}
+    {{page.title}}
+{% endblock %}
+
+{% block content %}
+
+<article>
+
+        <h3>{{page.title}}</h3>
+        <div>
+                {{page.content|safe}}
+        </div>
+
+</article>
+
+{% endblock %}

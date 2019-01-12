@@ -1,0 +1,29 @@
+{% extends 'layout/master.html'%}
+
+{% block title %}
+    {{district.name}}
+{% endblock %}
+
+{% block content %}
+
+<article>
+
+        <h3>{{district.name}}</h3>
+        <div>
+                {{district.description|safe}}
+        </div>
+
+        <div class="">
+            <h4>ساحه ها | مناطق </h4>
+            <ul>
+                {% for area in district.areas %}
+                    <li>
+                        <a href="">{{area.name}}</a>
+                    </li>
+                {% endfor%}
+            </ul>
+        </div>
+
+</article>
+
+{% endblock %}

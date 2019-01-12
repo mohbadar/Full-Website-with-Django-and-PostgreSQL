@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static from staticfiles %}
 <html lang="fa" dir="rtl" xmlns="http://www.w3.org/1999/xhtml">
 
     <head>
@@ -12,8 +13,119 @@
             {% include 'layout/partials/header.html'%}
 
             <main>
-                <div class="container" style="margin-top: 3%">
-                            {% block content %}{% endblock %}
+                <div class="container" style="margin-top: 2%">
+
+                    <div class="row">
+
+                        <div class="cols col-md-6 col-sm-12 col-xs-12">
+                                    {% block content %}{% endblock %}
+                        </div>
+
+                        <div class="cols col-md-3 col-sm-12 col-xs-12">
+
+                                 <section class="box list list-bullets bullet-icons hidden-img title-only has-tabs" style="" data-conf="{&quot;tabGroup&quot;:&quot;g2&quot;}">
+                            <header>
+                                <h2 style=""><span>اخبار تازه | نوی خبرونه</span>
+                                </h2>
+                            </header>
+                            <div>
+                                <ul id="top_news">
+
+                                <li class="news">
+                                        <div class="desc">
+                                            <h3><a href="" target="_blank" title=""></a>
+
+                                            </h3>
+                                        </div>
+                                </li>
+
+                                </ul>
+                            </div>
+
+            </section>
+                        </div>
+
+                        <div class="cols col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                            
+                                <img src="{% static 'images/logo.png' %}" style="width:250px; margin-right:30px" class="img-responsive">
+                                <div style="border:1px solid #ddd;padding: 5px; padding-top:30px; margin-top:10px; background-color: #eee">
+                                    <ul class="list bullet" style="text-align:right; " id="top_pages">
+                                         <li><a href=""></a></li>
+                                    </ul>
+                                </div>
+
+
+                        </div>
+
+                    </div>
+
+                    <!--master page  content-->
+
+                    <div class="row">
+
+                        <div class="cols col-lg-4 col-md-4 col-sm-6 col-xs-12">
+
+
+                            <section  class="box cols cols-2 list list-bordered" style="margin-right: 5%;">
+                                <header>
+                                    <h2 style=""><span>مقالات علمی جدید | نوی علمی مقالات</span>
+                                    </h2>
+                                </header>
+
+                                 <div>
+                                    <ul id="top_articles">
+
+                                    </ul>
+                                 </div>
+
+                            </section>
+
+
+
+                        </div>
+
+                        <div class="cols col-lg-4 col-md-4 col-sm-6 col-xs-12">
+
+
+                            <section  class="box cols cols-2 list list-bordered" style="margin-right: 5%;">
+                                <header>
+                                    <h2 style=""><span>برنامه جدید | نوی پروګرامونه </span>
+                                    </h2>
+                                </header>
+
+                                 <div>
+                                    <ul id="top_events">
+
+                                    </ul>
+                                 </div>
+
+                            </section>
+
+                        </div>
+
+
+                        <div class="cols col-lg-4 col-md-4 col-sm-6 col-xs-12">
+
+                            <section  class="box cols cols-2 list list-bordered" style="margin-right: 5%;">
+                                <header>
+                                    <h2 style=""><span>کتابهای جدید | نوی کتابونه </span>
+                                    </h2>
+                                </header>
+
+                                 <div>
+                                    <ul id="top_books">
+
+                                    </ul>
+                                 </div>
+
+                            </section>
+
+                        </div>
+
+                    </div>
+
+
+
                 </div>
             </main>
 

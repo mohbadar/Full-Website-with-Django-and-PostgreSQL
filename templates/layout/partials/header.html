@@ -1,3 +1,5 @@
+       {% load static from staticfiles %}
+
         <div id="header-ad" class="d-xs-block d-sm-block d-md-none d-lg-none">
             <div class="container">
             </div>
@@ -10,14 +12,14 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-5 col-sm-2">
-                            <ul class="languages-menu">
-                                <li><a href="" >ننوتل  | ورود </a></li>
+                            <ul  style="list-style:none;">
+                                <li><a href="/site-administration" >ننوتل  | ورود </a></li>
                             </ul>
                         </div>
                         <div class="col-7 col-sm-3">
                             <ul class="nav-menu">
-                                <li><a href="#">تماس با ما </a></li>
-                                <li><a href="#">درباره ما </a></li>
+                                <li><a href="#">تماس | اړیکه</a></li>
+                                <li><a href="#"> ما | مونژ </a></li>
                                 <li><a href="#"><i class="/archive"></i>آرشیو</a></li>
                                 <li><a href="#">تبلیغات</a></li>
                             </ul>
@@ -44,16 +46,7 @@
                                 <li><a href=""><i class="fa fa-twitter"></i>اندروید</a></li>
 
                             </ul>
-                            <div class="date"><script type="text/javascript">
-                                  var currentdate = new Date();
-                                  var datetime = "Last Sync: " + currentdate.getDate() + "/"
-                                            + (currentdate.getMonth()+1)  + "/"
-                                            + currentdate.getFullYear() + " @ "
-                                            + currentdate.getHours() + ":"
-                                            + currentdate.getMinutes() + ":"
-                                            + currentdate.getSeconds();
-                                  print(datetime)
-                            </script></div>
+                            <div class="date"><script type="text/javascript">  document.write(new Date().getYear());</script></div>
                         </div>            </div>
                 </div>
             </div>
@@ -61,20 +54,19 @@
                 <div class="row">
                     <div class="col-12 col-sm-5 col-md-6 col-lg-6 col-xl-7">
                         <h1 class="page-header">
-                            <a href="index.html" class="logo">خبرآنلاین</a>
+                            <a href="index.html" class="logo"><img src="{% static 'images/af_flag.png'%}" style="width:100px; margin-top:5px;"></a>
                         </h1>
                     </div>
                     <div class="col-12 col-sm-7 col-md-6 col-lg-6 col-xl-5">
                         <section id="box159" class="box ads" data-conf="{}">
                             <div style="">
                                 <ul>
+                                    <li >
+                                            <h3>خدا، وطن، وظیفه</h3>
+                                    </li>
 
-                                    <li data-conf="{}">
-                                        <div id="ad159_4">
-                                            <figure><a href="/" style="max-width: 70px">
-                                                    <img src="images/logo.PNG" alt="LOGO COMES HERE" /></a></figure>
-                                        </div>
-
+                                    <li >
+                                            <h3>خدا، هیواد، دنډه</h3>
                                     </li>
                                 </ul>
                                 <div class="clearfix"></div>
@@ -91,110 +83,111 @@
                 <div class="container">
                     <ul>
                         <li class="active">
-                            <a href="index.html">صفحه اصلی</a>
+                            <a href="/"> خانه | کور</a>
                         </li>
+
+
+
                         <li class=" has-child">
-                            <a href="service/Politics.html">سیاست</a>
-                            <ul class="submenu">
-                                <li class="">
-                                    <a href="service/Politics/leader.html">رهبری</a>
-                                </li>
-                                <li class="">
-                                    <a href="service/Politics/parties.html">احزاب و شخصیت‌ها</a>
-                                </li>
+                            <a href="">خبرها | خبرونه</a>
+                            <ul class="submenu" id="news_category">
 
+                            </ul>
                         </li>
-                    </ul>
-                    </li>
-                    <li class=" has-child">
-                        <a href="service/Economy.html">اقتصاد</a>
-                        <ul class="submenu">
-                            <li class="">
-                                <a href="service/Economy/macroeconomics.html">اقتصاد کلان</a>
-                            </li>
 
-                        </ul>
-                    </li>
-                    <li class=" has-child">
-                        <a href="service/culture.html">فرهنگ</a>
-                        <ul class="submenu">
-                            <li class="">
-                                <a href="service/culture/cinema.html">سینما</a>
-                            </li>
-                            <li class="">
-                                <a href="service/culture/defence.html">دفاع مقدس</a>
-                            </li>
 
-                        </ul>
-                    </li>
                     <li class=" has-child">
-                        <a href="service/society.html">جامعه</a>
-                        <ul class="submenu">
-                            <li class="">
-                                <a href="service/society/education.html">آموزش</a>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li class=" has-child">
-                        <a href="service/World.html">بین‌الملل</a>
-                        <ul class="submenu">
-                            <li class="">
-                                <a href="service/World/americas.html">آمریکا</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class=" has-child">
-                        <a href="service/sport.html">ورزش</a>
-                        <ul class="submenu">
-                            <li class="">
-                                <a href="service/sport/iran-soccer.html">فوتبال ملی</a>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li class=" has-child">
-                        <a href="service/science.html">دانش</a>
-                        <ul class="submenu">
-                            <li class="">
-                                <a href="service/science/astronomy.html">نجوم</a>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li class=" has-child">
-                        <a href="service/ict.html">فناوری اطلاعات</a>
-                        <ul class="submenu">
-                            <li class="">
-                                <a href="service/ict/internet.html">اینترنت</a>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li class=" has-child">
-                        <a href="service/comic.html">طنز و کاریکاتور</a>
-                        <ul class="submenu">
-                            <li class="">
-                                <a href="service/comic/illustration.html">طرح</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class=" has-child">
-                        <a href="service/multimedia.html">چندرسانه‌ای</a>
-                        <ul class="submenu">
-                            <li class="">
-                                <a href="service/multimedia/movie.html">فیلم</a>
-                            </li>
+                        <a href="">علمی </a>
+                        <ul class="submenu" id="article_category">
 
                         </ul>
                     </li>
 
+
                     <li class=" has-child">
-                        <a href="service/tourism.html">گردشگری</a>
+                        <a href="">کتابخانه | کتابتون</a>
+                        <ul class="submenu" id="book_category">
+
+                        </ul>
+                    </li>
+
+
+                    <li class=" has-child">
+                        <a href="">برنامه ها|پروګرامونه</a>
+                        <ul class="submenu" id="event_category">
+
+                        </ul>
+                    </li>
+
+
+                    <li class="has-child">
+                        <a href="">مقالات</a>
+                        <ul class="submenu" id="post_category">
+
+                        </ul>
+                    </li>
+
+
+                    <li class=" has-child">
+                        <a href="">چندرسانه ای | رساني</a>
                         <ul class="submenu">
+
                             <li class="">
-                                <a href="service/tourism/around-world.html">جهانگردی</a>
+                                <a href="">فیلم</a>
                             </li>
+
+                            <li class="">
+                                <a href="">صوتی</a>
+                            </li>
+
+
+                            <li class="">
+                                <a href="">ګالری</a>
+                            </li>
+
+                            <li class="">
+                                <a href="">اسناد</a>
+                            </li>
+
+                             <li class="">
+                                <a href="">نظریات</a>
+                            </li>
+
+
+
+                        </ul>
+                    </li>
+
+
+                    <li class=" has-child">
+                        <a href="service/science.html">فرصت ها | فرصتونه</a>
+                        <ul class="submenu" id="opportunities">
+
+                        </ul>
+                    </li>
+                    <li class=" has-child">
+                        <a href=""> افغانستان </a>
+                        <ul class="submenu" id="provinces">
+
+                        </ul>
+                    </li>
+                    <!--<li class=" has-child">-->
+                        <!--<a href=""> اعلانات </a>-->
+                        <!--<ul class="submenu" id="adv_category">-->
+
+                        <!--</ul>-->
+                    <!--</li>-->
+                    <li class=" has-child">
+                        <a href="">وظایف | دنډه</a>
+                        <ul class="submenu" id="jobs">
+
+                        </ul>
+                    </li>
+
+                    <li class=" has-child">
+                        <a href="">صحفه ها</a>
+                        <ul class="submenu" id="page_categories">
+
                         </ul>
                     </li>
                     </ul>

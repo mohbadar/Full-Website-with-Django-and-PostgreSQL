@@ -1,0 +1,18 @@
+{% extends 'layout/master.html'%}
+
+{% block title %}
+    {{opportunity.title}}
+{% endblock %}
+
+{% block content %}
+
+<article>
+
+        <h3>{{opportunity.title}}</h3>
+        <div>
+                {{opportunity.description|safe}}
+        </div>
+
+</article>
+
+{% endblock %}

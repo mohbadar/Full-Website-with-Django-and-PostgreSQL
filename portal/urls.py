@@ -20,8 +20,19 @@ from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('site-administration/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('', views.index, name="index"),
+    path('advertisement/', include('advertisement_management.urls')),
+    path('news/', include('news_management.urls')),
+    path('article/', include('article_management.urls')),
+    path('book/', include('book_management.urls')),
+    path('event/', include('event_management.urls')),
+    path('post/', include('post_management.urls')),
+    path('afghanistan/', include('afghanistan_info_management.urls')),
+    path('opportunity/', include('opportunity_management.urls')),
+    path('job/', include('job_management.urls')),
+    path('mesc/', include('mesc_management.urls')),
+
 
 	] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

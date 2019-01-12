@@ -30,7 +30,7 @@ class Destrict(models.Model):
 
 class Area(models.Model):
     name = models.CharField(max_length=64, verbose_name=("Area Name"))
-    destrict = models.ForeignKey(Province, related_name="destrict", on_delete="cascade", verbose_name=("Destrict"))
+    destrict = models.ForeignKey(Destrict, related_name="destrict", on_delete="cascade", verbose_name=("Destrict"))
     description = RichTextUploadingField()
     created_at =  models.DateTimeField(editable=False, default=timezone.now)
 

@@ -1,0 +1,29 @@
+{% extends 'layout/master.html'%}
+
+{% block title %}
+    {{province.name}}
+{% endblock %}
+
+{% block content %}
+
+<article>
+
+        <h3>{{province.name}}</h3>
+        <div>
+                {{province.description|safe}}
+        </div>
+
+        <div class="">
+            <h4>ولسوالی ها | ولسوالي ګانی</h4>
+            <ul>
+                {% for district in province.destricts %}
+                    <li>
+                        <a href="">{{district.name}}</a>
+                    </li>
+                {% endfor%}
+            </ul>
+        </div>
+
+</article>
+
+{% endblock %}
