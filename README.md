@@ -1,7 +1,8 @@
 # Website with Django and PostgreSQL
 
 Full Featured Open Source Website with Python (Django Framework)
-It is designed and developed to be a feature rich and ready to deploy website application. In design, development and testing phases, the best software engineering practices are considered. So, you also can easily customize it according to your requirements, if you are familiar with Django. In case you don’t know Django, talk to a hosting company and buy some storage, I will deploy it for you. 
+It is designed and developed to be a feature rich and ready to deploy website application. In design, development and testing phases, the best software engineering practices are considered. So, you also can easily customize it according to your requirements, if you are familiar with Django. 
+
 I have highlighted some the functionalities of the website. You can browse the source code:
 
 <pre>
