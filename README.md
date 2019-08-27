@@ -5,20 +5,15 @@ It is designed and developed to be a feature rich and ready to deploy website ap
 
 I have highlighted some the functionalities of the website. You can browse the source code:
 
-<pre>
-•	Dari User Interface (UI) – Easily can be adapted to English/LTR UI
-•	Support SQLite, MySQL and PostgreSQL Databases – Just comment/uncomment the driver API in settting.py 
-•	Create and Manage Dynamic Pages 
-•	News Management 
-•	Book Management  
-•	Opportunity Management (Fellowship, Scholarship,… ) 
-•	Article Management
-•	Career Center 
-•	Mutli-media Management
-•	Post Management
-•	Advertisement Management
-•	Afghanistan Information Management
-•	Tourism Information Management
-•	And so on 
-
-</pre>
+Dari User Interface (UI) – Easily can be adapted to English/LTR UI
+Support SQLite, MySQL and PostgreSQL Databases – Just comment/uncomment the driver API in settting.py 
+Create and Manage Dynamic Pages 
+News Management 
+Book Management  
+Opportunity Management (Fellowship, Scholarship,… ) 
+Article Management
+Career Center 
+Mutli-media Management
+Post Management
+Advertisement Management
+And so on 
